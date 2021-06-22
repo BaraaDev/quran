@@ -59,10 +59,5 @@ class HomeController extends Controller
               'articles','testimonials','services'));
     }
 
-    public function profile(Request $request,$id, $slug = null)
-    {
-        $user = User::findOrFail(auth()->user()->id);
-        SEOMeta::setTitle($user->name);
-        return view('profile',compact('user'));
-    }
+
 }
