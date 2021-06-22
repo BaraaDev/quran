@@ -39,6 +39,7 @@ class AppointmentController extends Controller
             ->addMediaFromRequest('image')
             ->UsingName($appointments->title)
             ->UsingFileName("$appointments->title.jpg")
+
             ->withCustomProperties([
                 'subject'  => $appointments->title,
             ])

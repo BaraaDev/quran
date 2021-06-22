@@ -26,5 +26,6 @@ Route::namespace('Admin')->middleware(['auth','admin'])->prefix('dashboard')->gr
     Route::resource('testimonials' ,'TestimonialController');
     Route::resource('about_us' ,'AboutUsController');
     Route::resource('settings' ,'SettingController');
+    Route::resource('users' ,'UserController');
 });
 
