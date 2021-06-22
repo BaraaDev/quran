@@ -27,3 +27,4 @@ Route::post('comment/{id}', 'ArticleController@commentStore')->name('comment.sto
 Route::get('contact-us','ContactUsController@create')->name('contact-us.create');
 Route::post('contact-us','ContactUsController@store')->name('contact-us.store');
 Route::get('about-us','AboutUsController@index')->name('about-us.index');
+Route::get('profile','HomeController@profile')->name('profile');

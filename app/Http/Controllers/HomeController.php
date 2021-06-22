@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Testimonial;
+use App\Models\User;
 use Artesaos\SEOTools\Facades\JsonLd;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
@@ -56,5 +57,12 @@ class HomeController extends Controller
         JsonLd::setTitle($setting->title);
         return view('home',compact('appointments',
               'articles','testimonials','services'));
+    }
+
+    public function profile(Request $request,$id, $slug = null)
+    {
+        $user = User::findOrFail(auth()->user()->id);
+        SEOMeta::setTitle($user->name);
+        return view('profile',compact('user'));
     }
 }
