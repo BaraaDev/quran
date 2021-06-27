@@ -13,7 +13,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="contact-wrap bg-white shadow-lg rounded-lg position-relative">
-                       {{-- @include('admin.layouts.partials.validation-errors')--}}
+                       @include('admin.layouts.messages.message')
                         <h1 class="text-grey-900 fw-700 display3-size mb-5 lh-1">إتصل بنا</h1>
                         <form action="{{route('contact-us.store')}}" method="post">
                             @csrf

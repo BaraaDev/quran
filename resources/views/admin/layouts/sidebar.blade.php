@@ -107,6 +107,13 @@
                     <li class="nav-item"><a href="{{route('users.create')}}" class="nav-link">إنشاء مستخدم جديد</a></li>
                 </ul>
             </li>
+            <li class="nav-item nav-item-submenu">
+                <a href="{{route('mail.index')}}" class="nav-link"><i class="icon-bubbles4"></i> <span>الرسائل</span></a>
+                <ul class="nav nav-group-sub" data-submenu-title="الرسائل">
+                    <li class="nav-item"><a href="{{route('mail.index')}}" class="nav-link">جميع الرسائل</a></li>
+                    <li class="nav-item"><a href="{{route('mail.create')}}" class="nav-link">إنشاء رسالة جديدة</a></li>
+                </ul>
+            </li>
 
             <li class="nav-item nav-item-submenu">
                 <a href="{{route('about_us.index')}}" class="nav-link"><i class="icon-info3"></i> <span>حول الموقع</span></a>

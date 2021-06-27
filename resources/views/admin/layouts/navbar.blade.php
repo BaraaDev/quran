@@ -50,9 +50,9 @@
                                     <img src="{{asset('admin/global_assets/images/placeholders/placeholder.jpg')}}" width="36" height="36" class="rounded-circle" alt="">
                                 </div>
 
-                                <div class="media-body">
+                                <div class="media-body " >
                                     <div class="media-title">
-                                        <a href="Javascript:void(0)">
+                                        <a href="{{route('mail.show',$contact->id)}}">
                                             <span class="font-weight-semibold">{{$contact->name}}</span>
                                             <span class="text-muted float-right font-size-sm">{{$contact->created_at->format('F jS ,Y')}}</span>
                                         </a>
@@ -68,7 +68,7 @@
                     </div>
 
                     <div class="dropdown-content-footer justify-content-center p-0">
-                        <a href="Javascript:void(0)" class="bg-light text-grey w-100 py-2" data-popup="tooltip" title="Load more"><i class="icon-menu7 d-block top-0"></i></a>
+                        <a href="{{route('mail.index')}}" class="bg-light text-grey w-100 py-2" data-popup="tooltip" title="شاهد أكثر"><i class="icon-menu7 d-block top-0"></i></a>
                     </div>
                 </div>
             </li>

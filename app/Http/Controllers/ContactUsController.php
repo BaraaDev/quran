@@ -36,6 +36,6 @@ class ContactUsController extends Controller
     {
         $contact_us = ContactUs::create($request->all());
 
-        return redirect()->back();
+        return redirect()->back()->with(['message' => 'تم إرسال الرسالة للموقع بنجاح، سيتم الرد عليها في أقرب وقت']);
     }
 }
