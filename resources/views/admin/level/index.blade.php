@@ -98,7 +98,7 @@
                                                     {!! Form::open([
                                                        'action' => ['Admin\LevelController@destroy',$level->id],
                                                        'method' => 'delete'
-                                                   ])!!}
+                                                    ])!!}
                                                     <button class="dropdown-item" onclick="return confirm('هل أنت متأكد من حذف {{$level->title}} ؟');"><i class="icon-trash-alt" ></i> حذف {{$level->title}}</button>
                                                     {!! Form::close() !!}
                                                 </div>

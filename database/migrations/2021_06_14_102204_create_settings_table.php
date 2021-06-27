@@ -24,7 +24,6 @@ class CreateSettingsTable extends Migration
             $table->string('phone');
             $table->string('email');
             $table->string('location');
-            $table->string('user');
             $table->timestamps();
             $table->softDeletes();
         });

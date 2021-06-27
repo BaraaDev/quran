@@ -26,7 +26,6 @@ class LevelRequest extends FormRequest
         return [
             'title'      => 'required|min:3|max:199|string',
             'document'   => 'required|min:3|string',
-            'color'      => 'required|max:25',
             'user'       => 'required',
             'status'     => 'required|in:0,1|numeric',
         ];

@@ -30,7 +30,7 @@ class SettingRequest extends FormRequest
             'meta_description' => 'required|min:3|string',
             'facebook'         => 'required|max:25',
             'whatsApp'         => 'required|max:25',
-            'phone'            => 'required',
+            'phone'            => 'required|numeric',
             'email'            => 'required|email:rfc,dns|min:3|max:225',
             'location'         => 'required|min:3|max:225|string',
             'image'            => 'required|image',

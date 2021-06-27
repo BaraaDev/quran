@@ -17,7 +17,6 @@ class CreateAboutUsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->string('user');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -21,6 +21,7 @@ class CreateContactUsTable extends Migration
             $table->string('subject');
             $table->text('message');
             $table->string('is_read')->nullable()->default('0');
+            $table->string('is_sender')->nullable()->default('0');
             $table->timestamps();
             $table->softDeletes();
         });

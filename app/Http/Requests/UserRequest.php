@@ -25,11 +25,11 @@ class UserRequest extends FormRequest
     {
         return [
             'name'        => 'required|min:3|max:199|string',
-            'phone'       => 'required',
-            'email'       => 'required|email:rfc,dns|min:3|max:225',
+            'phone'       => 'required|numeric',
+            'email'       => 'required|email:rfc,dns|min:3|max:225|unique:users,email',
             'password'    => 'required|confirmed|min:11|max:199|string',
             'is_admin'    => 'required|in:user,admin|string',
-            'status'     => 'required|in:0,1|numeric',
+            'status'      => 'required|in:0,1|numeric',
         ];
     }
 }

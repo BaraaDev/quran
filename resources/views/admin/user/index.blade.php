@@ -58,7 +58,7 @@
 
                         <div class="media-body">
                             <div class="font-weight-semibold">{{$user->name}}</div>
-                            <span class="text-muted">{{$user->is_admin}}</span>
+                            <span class="text-muted">@if($user->is_admin == 'user') مستخدم @else مدير @endif  </span>
                         </div>
                         <div class="ml-3 align-self-center">
                             <div class="list-icons">
@@ -66,7 +66,12 @@
                                     <a href="#" class="list-icons-item dropdown-toggle caret-0" data-toggle="dropdown"><i class="icon-menu7"></i></a>
                                     <div class="dropdown-menu">
                                         <a href="{{route('users.edit',$user->id)}}" class="dropdown-item"><i class="icon-pencil7"></i>تعديل "{{$user->name}}"</a>
-                                        <a href="#" class="dropdown-item"><i class="icon-reset"></i>حذف "{{$user->name}}"</a>
+                                        {!! Form::open([
+                                             'action' => ['Admin\UserController@destroy',$user->id],
+                                             'method' => 'delete'
+                                         ])!!}
+                                        <button class="dropdown-item"  onclick="return confirm('هل أنت متأكد من حذف المستخدم {{$user->name}} ؟');"><i class="icon-reset"></i> حذف "{{$user->name}}"</button>
+                                        {!! Form::close() !!}
                                     </div>
                                 </div>
                             </div>

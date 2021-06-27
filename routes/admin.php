@@ -27,5 +27,8 @@ Route::namespace('Admin')->middleware(['auth','admin'])->prefix('dashboard')->gr
     Route::resource('about_us' ,'AboutUsController');
     Route::resource('settings' ,'SettingController');
     Route::resource('users' ,'UserController');
+    Route::resource('mail' ,'MailController');
+    Route::get('email/sender' ,'MailController@sender')->name('mail.sender');
+    Route::get('email/delete' ,'MailController@delete')->name('mail.delete');
 });
 

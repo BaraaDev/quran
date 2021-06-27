@@ -14,5 +14,5 @@ class Setting extends Model implements HasMedia
     use SoftDeletes,InteractsWithMedia;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = ['title','description','meta_keyword','meta_description','facebook','whatsApp','phone','email','location'];
+    protected $fillable = ['title','description','meta_keyword','meta_description','facebook','whatsApp','phone','email','location','user'];
 }

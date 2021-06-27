@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
+use App\Mail\EmailSender;
 use App\Models\ContactUs;
 use Artesaos\SEOTools\Facades\JsonLd;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\TwitterCard;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactUsController extends Controller
 {
@@ -33,6 +35,7 @@ class ContactUsController extends Controller
     public function store(ContactRequest $request)
     {
         $contact_us = ContactUs::create($request->all());
+
         return redirect()->back();
     }
 }

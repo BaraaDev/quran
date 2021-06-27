@@ -15,18 +15,21 @@
 
         <!-- Sidebar mobile toggler -->
         <div class="sidebar-mobile-toggler text-center">
-            <a href="#" class="sidebar-mobile-main-toggle">
+            <a href="javascript: void(0);" class="sidebar-mobile-main-toggle">
                 <i class="icon-arrow-right8"></i>
             </a>
             Navigation
-            <a href="#" class="sidebar-mobile-expand">
+            <a href="javascript: void(0);" class="sidebar-mobile-expand">
                 <i class="icon-screen-full"></i>
                 <i class="icon-screen-normal"></i>
             </a>
         </div><!-- /sidebar mobile toggler -->
 
         @include('admin.layouts.sidebar')
+
     </div><!-- /main sidebar -->
+    @yield('sidebar')
+
 
 
     <!-- Main content -->

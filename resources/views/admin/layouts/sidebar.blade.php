@@ -101,6 +101,14 @@
             </li>
 
             <li class="nav-item nav-item-submenu">
+                <a href="{{route('users.index')}}" class="nav-link"><i class="icon-users"></i> <span>المستخدمين</span></a>
+                <ul class="nav nav-group-sub" data-submenu-title="المستخدمين">
+                    <li class="nav-item"><a href="{{route('users.index')}}" class="nav-link">جميع المستخدمين</a></li>
+                    <li class="nav-item"><a href="{{route('users.create')}}" class="nav-link">إنشاء مستخدم جديد</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item nav-item-submenu">
                 <a href="{{route('about_us.index')}}" class="nav-link"><i class="icon-info3"></i> <span>حول الموقع</span></a>
                 <ul class="nav nav-group-sub" data-submenu-title="حول الموقع">
                      @if(count($aboutUs) == 0)

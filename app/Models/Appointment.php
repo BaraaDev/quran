@@ -17,12 +17,5 @@ class Appointment extends Model  implements HasMedia
     protected $dates = ['deleted_at'];
     protected $fillable = ['title','content','user','status'];
 
-    public function registerMediaConversions(Media $media = null): void
-    {
-        $this->addMediaConversion('images')
-            ->width(368)
-            ->height(232)
-            ->sharpen(10)
-            ->nonOptimized();
-    }
+
 }

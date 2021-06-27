@@ -25,10 +25,11 @@ class ContactRequest extends FormRequest
     {
         return [
             'name'       => 'required|min:3|max:199|string',
-            'phone'      => 'required',
+            'phone'      => 'required|numeric',
             'email'      => 'required|min:3|max:199|email:rfc,dns',
             'subject'    => 'required|min:3|max:199|string',
             'message'    => 'required|min:3|string',
+            'is_sender'  => 'required|in:0,1|numeric',
         ];
     }
 }
