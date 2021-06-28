@@ -8,9 +8,5 @@ to install
 `compser install` or `composer update`
 `cp .env.example .env`
 `php artisan key:generate`
-change in file .env `DB_DATABASE` and `DB_USERNAME`
-
-and `php artisan migrate` and  `php artisan db seed`
-=======
+change in file .env `DB_DATABASE` and `DB_USERNAME`and `php artisan migrate` and  `php artisan db seed`
  
->>>>>>> a20fc4c64a6aa6abc4a8a975315ce78782a0a71f
