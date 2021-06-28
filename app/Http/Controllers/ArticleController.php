@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Comment;
+use App\Models\Level;
 use Artesaos\SEOTools\Facades\JsonLd;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
@@ -24,10 +25,9 @@ class ArticleController extends Controller
     }
 
 
-
     public function index()
     {
-        $articles = Article::orderBy('created_at','DESC')->paginate('25');
+        $articles = Article::orderBy('created_at','DESC')->paginate('1');
         SEOMeta::setTitle('دروس ومقالات موقع دار أفنان');
         SEOMeta::setDescription('عرض المقالات والدروس الخاصه بكل المستويات فى موقع دار أفنان عرض المقالات والدروس الخاصه بكل المستويات فى موقع دار أفنان عرض المقالات والدروس الخاصه بكل المستويات فى موقع دار أفنان');
         SEOMeta::setCanonical('https://quran.test/articles');
@@ -45,10 +45,34 @@ class ArticleController extends Controller
         return view('articles',compact('articles'));
     }
 
-    public function show($id)
+    public function levels($id)
+    {
+        $levels = Level::findOrFail($id);
+        $articles = Article::where('level_id',$levels->id)->orderBy('created_at','DESC')->paginate('1');
+
+
+        SEOMeta::setTitle($levels->title);
+        SEOMeta::setDescription('عرض المقالات والدروس الخاصه بكل المستويات فى موقع دار أفنان عرض المقالات والدروس الخاصه بكل المستويات فى موقع دار أفنان عرض المقالات والدروس الخاصه بكل المستويات فى موقع دار أفنان');
+        SEOMeta::setCanonical("https://quran.test/levels/$levels->id");
+
+        OpenGraph::setTitle($levels->title);
+        OpenGraph::setDescription($levels->title);
+        OpenGraph::setUrl(env('APP_URL'));
+        OpenGraph::addProperty('type', $levels->title);
+
+        TwitterCard::setTitle($levels->title);
+        TwitterCard::setSite(route('article.index'));
+
+        JsonLd::setTitle($levels->title);
+
+        return view('levels',compact('levels','articles'));
+    }
+
+
+    public function show($title)
     {
 
-        $article = Article::findOrFail($id);
+        $article = Article::findOrFail($title);
         $comments = $article->comments()->with('user')->orderBy('id','DESC')->limit(30)->get();
 
         SEOMeta::setTitle($article->title);

@@ -21,6 +21,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/articles', 'ArticleController@index')->name('article.index');
 Route::get('/articles/{id}', 'ArticleController@show')->name('article.show');
 Route::post('comment/{id}', 'ArticleController@commentStore')->name('comment.store'); // route comment article store
+Route::get('levels/{id}','ArticleController@levels')->name('level.index');
 Route::get('contact-us','ContactUsController@create')->name('contact-us.create');
 Route::post('contact-us','ContactUsController@store')->name('contact-us.store');
 Route::get('about-us','AboutUsController@index')->name('about-us.index');
