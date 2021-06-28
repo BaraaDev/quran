@@ -28,7 +28,6 @@
                     </article>
                 </div>
             @endforeach
-
                 {!! $articles->render('pagination::articlesInWeb') !!}
             </div>
         </div>
