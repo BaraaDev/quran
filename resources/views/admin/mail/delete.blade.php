@@ -156,7 +156,7 @@
 
                         </td>
                         <td class="table-inbox-image">
-                            <span class="btn bg-warning-400 rounded-circle btn-icon btn-sm">
+                            <span class="btn @if($loop->even) bg-indigo-400 @else bg-pink-400 @endif rounded-circle btn-icon btn-sm">
                                 <span class="letter-icon"></span>
                             </span>
                         </td>
