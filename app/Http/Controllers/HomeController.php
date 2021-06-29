@@ -7,44 +7,35 @@ use App\Models\Article;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Testimonial;
-use App\Models\User;
 use Artesaos\SEOTools\Facades\JsonLd;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\TwitterCard;
-use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
+
     public function index()
     {
-
-
         $appointments = Appointment::limit(2)->get();
+
         $articles = Article::limit(3)->get();
         $testimonials = Testimonial::limit(3)->get();
         $services = Service::limit(4)->get();
         $setting = Setting::first();
+        $time = Carbon::now()->format('H');
 
         SEOMeta::setTitle($setting->title);
         SEOMeta::setDescription($setting->meta_description);
         SEOMeta::setCanonical(env('APP_URL'));
-        SEOMeta::addKeyword([$setting->meta_keyword]);
+        SEOMeta::addKeyword($setting->meta_keyword);
 
         OpenGraph::setTitle($setting->title);
         OpenGraph::setDescription($setting->meta_description);
@@ -56,8 +47,6 @@ class HomeController extends Controller
 
         JsonLd::setTitle($setting->title);
         return view('home',compact('appointments',
-              'articles','testimonials','services'));
+              'articles','testimonials','services','time'));
     }
-
-
 }

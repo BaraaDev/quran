@@ -104,6 +104,6 @@ class ArticleController extends Controller
 
         ]);
 
-        return redirect()->route('article.show' , ['id' => $article->id ,'#comments']);
+        return redirect()->route('article.show' , ['id' => $article->id ,'#comments'])->with(['message' => 'تم إضافة التعليق بنجاح']);
     }
 }

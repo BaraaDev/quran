@@ -35,6 +35,7 @@
                 <div class="col-lg-8 offset-lg-2 comments-section bottom-border">
                     <div class="comments-list">
                         <h4 class="text-grey-900 font-sm fw-700 mt-5 mb-5" id="comments">التعليقات</h4>
+                        @include('admin.layouts.messages.message')
                         @foreach($comments as $comment)
                         <div class="section full mb-5">
                             <div class="row">

@@ -18,6 +18,7 @@ Route::namespace('Admin')->middleware(['auth','admin'])->prefix('dashboard')->gr
     Route::get('/', 'HomeController@index')->name('dashboard.home');
     Route::resource('categories' ,'CategoryController');
     Route::resource('articles' ,'ArticleController');
+    Route::post('commentArticleStore/{id}' ,'ArticleController@commentStore')->name('commentArticleStore');
     Route::resource('levels' ,'LevelController');
     Route::resource('tags' ,'TagController');
     Route::resource('appointments' ,'AppointmentController');

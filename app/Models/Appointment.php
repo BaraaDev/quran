@@ -15,7 +15,7 @@ class Appointment extends Model  implements HasMedia
     use SoftDeletes,InteractsWithMedia;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = ['title','content','user','status'];
+    protected $fillable = ['title','content','user','status','start_at','end_at'];
 
 
 }

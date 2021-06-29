@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
+use App\Models\Comment;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 
@@ -49,9 +51,11 @@ class ArticleController extends Controller
 
     public function show($id)
     {
-        $article = Article::findOrFail($id);
+        $article        = Article::findOrFail($id);
         $recentArticles = Article::orderBy('created_at','DESC')->limit(5)->get();
-        return view('admin.article.show',compact('article','recentArticles'));
+        $comments       = $article->comments()->orderBy('id','DESC')->limit(30)->get();
+
+        return view('admin.article.show',compact('article','recentArticles','comments'));
     }
 
     public function edit($id)
@@ -89,5 +93,19 @@ class ArticleController extends Controller
         $articles->delete();
 
         return redirect()->route('articles.index')->with(['message' => "تم حذف المقال بنجاح"]);
+    }
+
+    public function commentStore($id ,Request $request){
+
+        $article = Article::findOrFail($id);
+
+        Comment::create([
+            'user_id'    => auth()->user()->id,
+            'article_id' => $article->id,
+            'comment'    => $request->comment
+
+        ]);
+
+        return redirect()->back()->with(['message' => 'تم إضافة التعليق بنجاح']);
     }
 }

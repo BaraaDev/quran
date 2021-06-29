@@ -19,6 +19,8 @@ class CreateAppointmentsTable extends Migration
             $table->text('content');
             $table->string('user');
             $table->string('status')->nullable()->default('1');
+            $table->time('start_at')->nullable();
+            $table->time('end_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

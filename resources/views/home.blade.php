@@ -64,7 +64,11 @@
                 <img loading="lazy" src="{{$appointment->getFirstMediaUrl('images')}}" alt="{{$appointment->title}}" class="@if($loop->first) img-fluid @else w-100 @endif aos-init" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="500">
             </div>
             <div class="col-lg-4 @if($loop->first) @else order-lg-1 pt-lg--5 offset-lg-1 @endif">
-                <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 mt-4 text-uppercase rounded-xl ls-2 alert-warning d-inline-block text-warning mr-1">Our feature</span>
+                @if($time >= Carbon\Carbon::parse($appointment->start_at)->format('H') && $time <= Carbon\Carbon::parse($appointment->end_at)->format('H') )
+                <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 mt-4 text-uppercase rounded-xl ls-2 alert-success d-inline-block text-success mr-1"> متاح الآن</span>
+                @else
+                <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 mt-4 text-uppercase rounded-xl ls-2 alert-warning d-inline-block text-warning mr-1"> مغلق الآن</span>
+                @endif
                 <h2 class="text-grey-900 fw-700 display1-size pb-3 mb-0 mt-3 d-block lh-3 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500">{{$appointment->title}}</h2>
                 <p class="fw-400 font-xsss lh-28 text-grey-500 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">{!! $appointment->content !!}</p>
                 <a href="javascript:void(0);" class="btn border-0 bg-primary p-3 text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-3 w150 aos-init" data-aos="fade-up" data-aos-delay="400" data-aos-duration="500">Subscribe</a>

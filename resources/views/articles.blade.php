@@ -12,7 +12,7 @@
     <div class="blog-page pt-lg--7 pb-lg--7 pt-5 pb-5 bg-white">
         <div class="container">
             <div class="row">
-            @foreach($articles as $article)
+                @foreach($articles as $article)
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 mb-4">
                     <article class="post-article p-0 border-0 shadow-xss rounded-lg overflow-hidden">
                         <a href="{{route('article.show',$article->id)}}"><img src="{{$article->getFirstMediaUrl('images')}}" alt="{{$article->title}}" class="w-100"></a>
@@ -27,7 +27,7 @@
                         </div>
                     </article>
                 </div>
-            @endforeach
+                @endforeach
                 {!! $articles->render('pagination::articlesInWeb') !!}
             </div>
         </div>

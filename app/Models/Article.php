@@ -18,7 +18,7 @@ class Article extends Model implements HasMedia
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class,'article_tag');
+        return $this->belongsToMany(Tag::class,'article_tag','article_id');
     }
 
     public function level()
