@@ -51,7 +51,7 @@
                 <div class="card card-body">
                     <div class="media">
                         <div class="mr-3">
-                            <a href="#">
+                            <a href="javascript:void(0);">
                                 <img src="{{asset('admin/global_assets/images/placeholders/placeholder.jpg')}}" class="rounded" width="38" height="38" alt="">
                             </a>
                         </div>
@@ -63,7 +63,7 @@
                         <div class="ml-3 align-self-center">
                             <div class="list-icons">
                                 <div class="dropdown">
-                                    <a href="#" class="list-icons-item dropdown-toggle caret-0" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+                                    <a href="javascript:void(0);" class="list-icons-item dropdown-toggle caret-0" data-toggle="dropdown"><i class="icon-menu7"></i></a>
                                     <div class="dropdown-menu">
                                         <a href="{{route('users.edit',$user->id)}}" class="dropdown-item"><i class="icon-pencil7"></i>تعديل "{{$user->name}}"</a>
                                         {!! Form::open([

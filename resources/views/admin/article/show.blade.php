@@ -16,7 +16,7 @@
         <div class="page-header-content header-elements-md-inline">
             <div class="page-title d-flex">
                 <h4><i class="icon-arrow-right6 mr-2"></i> <span class="font-weight-semibold">الرئيسية</span> - {{$article->title}}</h4>
-                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+                <a href="javascript:void(0);" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
             </div>
         </div>
 
@@ -28,7 +28,7 @@
                     <span class="breadcrumb-item active">{{$article->title}}</span>
                 </div>
 
-                <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+                <a href="javascript:void(0);" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
             </div>
 
         </div>
@@ -50,15 +50,15 @@
                     <div class="card-body">
                         <div class="mb-4">
                             <div class="mb-3 text-center">
-                                <a href="#" class="d-inline-block">
+                                <a href="javascript:void(0);" class="d-inline-block">
                                     <img src="{{$article->getFirstMediaUrl('images')}}" class="img-fluid" alt="">
                                 </a>
                             </div>
                             <h4 class="font-weight-semibold mb-1">
-                                <a href="#" class="text-default">{{$article->title}}</a>
+                                <a href="javascript:void(0);" class="text-default">{{$article->title}}</a>
                             </h4>
                             <ul class="list-inline list-inline-dotted text-muted mb-3">
-                                <li class="list-inline-item">من خلال <a href="#" class="text-muted">{{$article->user}}</a></li>
+                                <li class="list-inline-item">من خلال <a href="javascript:void(0);" class="text-muted">{{$article->user}}</a></li>
                                 <li class="list-inline-item" title="{{$article->created_at}}">{{$article->created_at->format('F jS ,Y')}}</li>
                                 <li class="list-inline-item"><a href="#comments" class="text-muted">@if(count($comments)) {{$comments->count()}} تعليق @else  لا يوجد تعليقات @endif</a></li>
                              </ul>
@@ -87,7 +87,7 @@
                             <li class="media flex-column flex-md-row">
                                 <div class="media-body">
                                     <div class="media-title">
-                                        <a href="#" class="font-weight-semibold">{{optional($comment->user)->name}}</a>
+                                        <a href="javascript:void(0);" class="font-weight-semibold">{{optional($comment->user)->name}}</a>
                                         <span class="text-muted ml-3" title="{{$comment->created_at}}">{{$comment->created_at->diffForHumans()}}</span>
                                     </div>
 
@@ -136,7 +136,7 @@
                         <div class="card-body p-0">
                             <div class="nav nav-sidebar my-2">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="javascript:void(0);" class="nav-link">
                                         <i class="icon-stats-bars4"></i>
                                         {{$article->level->title}}
                                     </a>
