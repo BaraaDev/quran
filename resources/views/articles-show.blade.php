@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <h6 class="text-uppercase fw-600 ls-3 text-success font-xsss">{{optional($article->level)->title}}</h6>
+                    <a href="{{route('level.index',optional($article->level)->id)}}" class="text-uppercase fw-600 ls-3 text-success font-xsss">{{optional($article->level)->title}}</a>
                     <h2 class="mt-3 mb-2"><a href="#" class="lh-2 display2-size display2-md-size mont-font text-grey-900 fw-700">{{$article->title}}</a></h2>
                     <h6 class="font-xssss text-grey-500 fw-600 ml-3 mt-3 d-inline-block" title="{{$article->created_at}}"><i class="ti-time mr-2"></i>{{$article->created_at->format('j F ,Y')}}</h6>
                     <h6 class="font-xssss text-grey-500 fw-600 ml-3 mt-3 d-inline-block"><i class="ti-user mr-2"></i> {{$article->user}}</h6>
