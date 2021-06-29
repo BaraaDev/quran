@@ -18,7 +18,7 @@
                         <a href="{{route('article.show',$article->id)}}"><img src="{{$article->getFirstMediaUrl('images')}}" alt="{{$article->title}}" class="w-100"></a>
                         <div class="post-content p-4">
                             <a href="{{route('level.index',optional($article->level)->id)}}" class="font-xsss text-success fw-600 float-left">{{optional($article->level)->title}}</a>
-                            <h6 class="font-xssss text-grey-500 fw-600 mr-3 float-left" title="{{$article->created_at}}"><i class="ti-time mr-2"></i>{{$article->created_at->format('j F ,Y')}}</h6>
+                            <h6 class="font-xssss text-grey-500 fw-600 mr-3 float-left" title="{{$article->created_at->isoFormat('MMMM Do YYYY, h:mm:ss a')}}"><i class="ti-time mr-2"></i>{{$article->created_at->format('j F ,Y')}}</h6>
                             <h6 class="font-xssss text-grey-500 fw-600 mr-3 float-left"><i class="ti-user mr-2"></i>{{$article->user}}</h6>
                             <div class="clearfix"></div>
                             <h2 class="post-title mt-2 mb-2 pl-3"><a href="{{route('article.show',$article->id)}}" class="lh-30 font-sm cairo-font text-grey-800 fw-700">{{$article->title}}</a></h2>

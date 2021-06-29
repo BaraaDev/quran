@@ -59,7 +59,7 @@
                             </h4>
                             <ul class="list-inline list-inline-dotted text-muted mb-3">
                                 <li class="list-inline-item">من خلال <a href="javascript:void(0);" class="text-muted">{{$article->user}}</a></li>
-                                <li class="list-inline-item" title="{{$article->created_at}}">{{$article->created_at->format('F jS ,Y')}}</li>
+                                <li class="list-inline-item" title="{{$article->created_at->isoFormat('MMMM Do YYYY, h:mm:ss a')}}">{{$article->created_at->format('F jS ,Y')}}</li>
                                 <li class="list-inline-item"><a href="#comments" class="text-muted">@if(count($comments)) {{$comments->count()}} تعليق @else  لا يوجد تعليقات @endif</a></li>
                              </ul>
                             <div class="mb-3">
@@ -88,7 +88,7 @@
                                 <div class="media-body">
                                     <div class="media-title">
                                         <a href="javascript:void(0);" class="font-weight-semibold">{{optional($comment->user)->name}}</a>
-                                        <span class="text-muted ml-3" title="{{$comment->created_at}}">{{$comment->created_at->diffForHumans()}}</span>
+                                        <span class="text-muted ml-3" title="{{$comment->created_at->isoFormat('MMMM Do YYYY, h:mm:ss a')}}">{{$comment->created_at->diffForHumans()}}</span>
                                     </div>
 
                                     <p>{!! $comment->comment !!}</p>

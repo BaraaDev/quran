@@ -82,7 +82,7 @@
                     <div class="card-footer bg-transparent d-sm-flex justify-content-sm-between align-items-sm-center border-top-0 pt-0 pb-3">
                         <ul class="list-inline list-inline-dotted text-muted mb-3 mb-sm-0">
                             <li class="list-inline-item">من خلال  <a href="Javascript:void(0)" class="text-muted">{{$article->user}}</a></li>
-                            <li class="list-inline-item">{{$article->created_at->format('F jS ,Y')}}</li>
+                            <li class="list-inline-item" title="{{$article->created_at->isoFormat('MMMM Do YYYY, h:mm:ss a')}}">{{$article->created_at->format('F jS ,Y')}}</li>
                             @if(optional($article->level)->id)
                             <li class="list-inline-item"><a href="Javascript:void(0)"><span class="badge bg-blue-300">{{optional($article->level)->title}}</span></a></li>
                             @else

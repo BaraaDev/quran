@@ -7,7 +7,7 @@
                 <div class="col-lg-8 text-center">
                     <a href="{{route('level.index',optional($article->level)->id)}}" class="text-uppercase fw-600 ls-3 text-success font-xsss">{{optional($article->level)->title}}</a>
                     <h2 class="mt-3 mb-2"><a href="javascript:void(0);" class="lh-2 display2-size display2-md-size mont-font text-grey-900 fw-700">{{$article->title}}</a></h2>
-                    <h6 class="font-xssss text-grey-500 fw-600 ml-3 mt-3 d-inline-block" title="{{$article->created_at}}"><i class="ti-time mr-2"></i>{{$article->created_at->format('j F ,Y')}}</h6>
+                    <h6 class="font-xssss text-grey-500 fw-600 ml-3 mt-3 d-inline-block" title="{{$article->created_at->isoFormat('MMMM Do YYYY, h:mm:ss a')}}"><i class="ti-time mr-2"></i>{{$article->created_at->format('j F ,Y')}}</h6>
                     <h6 class="font-xssss text-grey-500 fw-600 ml-3 mt-3 d-inline-block"><i class="ti-user mr-2"></i> {{$article->user}}</h6>
                     <a href="#comments" class="font-xssss text-grey-500 fw-600 ml-3 mt-3 d-inline-block"><i class="ti-comments mr-2"></i> {{$comments->count()}} تعليق </a>
                 </div>
@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-sm-9 col-xs-9 pl-1 pr-0">
                                     <h4 class="mt-1 font-xss text-grey-900 fw-700">{{optional($comment->user)->name}}</h4>
-                                    <h6 class="text-grey-500 mb-1 mt-0 d-block fw-500 mb-0 ls-2">{{$comment->created_at->diffForHumans()}}</h6>
+                                    <h6 class="text-grey-500 mb-1 mt-0 d-block fw-500 mb-0 ls-2" title="{{$comment->created_at->isoFormat('MMMM Do YYYY, h:mm:ss a')}}">{{$comment->created_at->diffForHumans()}}</h6>
                                     <p class="font-xsss fw-400 lh-26 text-grey-500 mb-1 mt-2">{!! $comment->comment !!}</p>
                                 </div>
                             </div>

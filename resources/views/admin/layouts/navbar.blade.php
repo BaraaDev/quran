@@ -1,7 +1,7 @@
 <!-- Main navbar -->
 <div class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-brand">
-        <a href="index.html" class="d-inline-block">
+        <a href="{{route('dashboard.home')}}" class="d-inline-block">
             <img src="{{asset('admin/global_assets/images/logo_light.png')}}" alt="">
         </a>
     </div>
@@ -22,8 +22,6 @@
                     <i class="icon-paragraph-justify3"></i>
                 </a>
             </li>
-
-
         </ul>
 
         <span class="badge bg-success ml-md-3 mr-md-auto">متصل</span>
@@ -47,7 +45,7 @@
                             @foreach($contactUs as $contact)
                             <li class="media">
                                 <div class="mr-3 position-relative">
-                                    <img src="{{asset('admin/global_assets/images/placeholders/placeholder.jpg')}}" width="36" height="36" class="rounded-circle" alt="">
+                                    <img src="{{asset('website/avatar.jpg')}}" width="36" height="36" class="rounded-circle" alt="">
                                 </div>
 
                                 <div class="media-body " >
@@ -75,7 +73,7 @@
 
             <li class="nav-item dropdown dropdown-user">
                 <a href="Javascript:void(0)" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
-                    <img src="{{asset('admin/global_assets/images/placeholders/placeholder.jpg')}}" class="rounded-circle mr-2" height="34" alt="">
+                    <img src="{{asset('website/avatar.jpg')}}" class="rounded-circle mr-2" height="34" alt="">
                     <span>{{auth()->user()->name}}</span>
                 </a>
 
