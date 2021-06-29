@@ -8,4 +8,4 @@ to install
 `cp .env.example .env`
 `php artisan key:generate`
 change in file .env `DB_DATABASE` and `DB_USERNAME`and `php artisan migrate` and 
-`php artisan db seed` and use `APP_URL/login` email:`admin@app.com` password:`12345678`
+`php artisan db:seed`and go to `app->Providers->AppServiceProvider.php` and then cancel comments on any view and use `APP_URL/login` email:`admin@app.com` password:`12345678`

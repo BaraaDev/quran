@@ -1588,11 +1588,8 @@
                             </li>
                         </ul>
                     </div>
-                </div>
-                <!-- /daily financials -->
-
+                </div><!-- /daily financials -->
             </div>
-        </div>
-        <!-- /dashboard content -->
+        </div><!-- /dashboard content -->
     </div><!-- /content area -->
 @endsection
