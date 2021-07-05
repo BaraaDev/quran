@@ -1,10 +1,6 @@
 <!-- Main navbar -->
 <div class="navbar navbar-expand-md navbar-dark">
-    <div class="navbar-brand">
-        <a href="{{route('dashboard.home')}}" class="d-inline-block">
-            <img src="{{asset('admin/global_assets/images/logo_light.png')}}" alt="">
-        </a>
-    </div>
+    <div class="navbar-brand"></div>
 
     <div class="d-md-none">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">

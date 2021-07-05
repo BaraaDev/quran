@@ -1,15 +1,15 @@
 @php $name = "name"; @endphp
 <div class="form-group row">
-    <label class="col-form-label col-lg-2">اسم القسم</label>
+    <label class="col-form-label col-lg-2">اسم القسم<span class="text-danger">*</span></label>
     <div class="col-lg-10">
-        <input name="{{$name}}" value="{{Request::old($name) ? Request::old($name) : $model->name}}" type="text" class="form-control" placeholder="اكتب اسم القسم">
+        <input name="{{$name}}" value="{{Request::old($name) ? Request::old($name) : $model->name}}" type="text" class="form-control" required placeholder="اكتب اسم القسم">
     </div>
 </div>
 
 
 @php $user = "user"; @endphp
 <div class="col-lg-10">
-    <input name="{{$user}}" value="{{auth()->user()->name}}" type="hidden">
+    <input required name="{{$user}}" value="{{auth()->user()->name}}" type="hidden">
 </div>
 
 @php $status = "status"; @endphp

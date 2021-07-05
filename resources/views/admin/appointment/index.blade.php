@@ -56,6 +56,8 @@
                             <tr>
                                 <th>#</th>
                                 <th>المواعيد</th>
+                                <th>بداية الموعد</th>
+                                <th>نهاية الموعد</th>
                                 <th>الحالة</th>
                                 <th>من خلال</th>
                                 <th>تاريخ الإضافة</th>
@@ -67,6 +69,8 @@
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$appointment->title}}</td>
+                                    <td>{{$appointment->start_at}}</td>
+                                    <td>{{$appointment->end_at}}</td>
                                     <td>
                                         @if ($appointment->status == 1)
                                             <span class="badge badge-success">نشط</span>

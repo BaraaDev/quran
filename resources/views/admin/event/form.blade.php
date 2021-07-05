@@ -1,25 +1,25 @@
 
 @php $title = "title"; @endphp
 <div class="form-group row">
-    <label class="col-form-label col-lg-2">العنوان</label>
+    <label class="col-form-label col-lg-2">العنوان<span class="text-danger">*</span></label>
     <div class="col-lg-10">
-        <input name="{{$title}}" value="{{Request::old($title) ? Request::old($title) : $model->title}}" type="text" class="form-control" placeholder="اكتب العنوان">
+        <input name="{{$title}}" value="{{Request::old($title) ? Request::old($title) : $model->title}}" type="text" class="form-control" required placeholder="اكتب العنوان">
     </div>
 </div>
 
 @php $description = "description"; @endphp
 <div class="form-group row">
-    <label class="col-form-label col-lg-2">الوصف</label>
+    <label class="col-form-label col-lg-2">الوصف<span class="text-danger">*</span></label>
     <div class="col-lg-10">
-        <textarea name="{{$description}}"  class="form-control summernote">{{Request::old($description) ? Request::old($description) : $model->description}}</textarea>
+        <textarea name="{{$description}}" required class="form-control summernote">{{Request::old($description) ? Request::old($description) : $model->description}}</textarea>
     </div>
 </div>
 
 @php $link = "link"; @endphp
 <div class="form-group row">
-    <label class="col-form-label col-lg-2">الرابط</label>
+    <label class="col-form-label col-lg-2">الرابط<span class="text-danger">*</span></label>
     <div class="col-lg-10">
-        <input name="{{$link}}" type="text" value="{{Request::old($link) ? Request::old($link) : $model->link}}" class="form-control" placeholder="ضع رابط الزووم ">
+        <input name="{{$link}}" type="url" value="{{Request::old($link) ? Request::old($link) : $model->link}}" class="form-control" required placeholder="ضع رابط الزووم ">
     </div>
 </div>
 
@@ -50,7 +50,7 @@
 
 @php $user = "user"; @endphp
 <div class="col-lg-10">
-    <input name="{{$user}}" value="{{auth()->user()->name}}" type="hidden">
+    <input required name="{{$user}}" value="{{auth()->user()->name}}" type="hidden">
 </div>
 
 @php $status = "status"; @endphp

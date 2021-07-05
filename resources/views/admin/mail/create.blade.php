@@ -172,7 +172,7 @@
                             </tr>
                             <tr>
                                 <div class="d-sm-flex flex-sm-wrap">
-                                    <input name="is_sender" type="hidden" value="1">
+                                    <input required name="is_sender" type="hidden" value="1">
                                 </div>
                             </tr>
                             </tbody>
@@ -183,8 +183,7 @@
                     <!-- Mail container -->
                     <div class="card-body p-0">
                         <div class="overflow-auto mw-100">
-                            <textarea name="message" rows="3" cols="3" class="form-control summernote" required> {{old('message')}}"</textarea>
-
+                            <textarea  name="message" rows="3" cols="3" class="form-control summernote" required> {{old('message')}}"</textarea>
                         </div>
                     </div><!-- /mail container -->
                     </form>

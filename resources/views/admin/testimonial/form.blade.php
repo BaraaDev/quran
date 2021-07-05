@@ -1,30 +1,30 @@
 @php $name = "name"; @endphp
 <div class="form-group row">
-    <label class="col-form-label col-lg-2">العنوان</label>
+    <label class="col-form-label col-lg-2">العنوان<span class="text-danger">*</span></label>
     <div class="col-lg-10">
-        <input name="{{$name}}" value="{{Request::old($name) ? Request::old($name) : $model->name}}" type="text" class="form-control" placeholder="اكتب اسم الشخص">
+        <input name="{{$name}}" value="{{Request::old($name) ? Request::old($name) : $model->name}}" type="text" class="form-control" required placeholder="اكتب اسم الشخص">
     </div>
 </div>
 
 @php $content = "content"; @endphp
 <div class="form-group row">
-    <label class="col-form-label col-lg-2">الوصف</label>
+    <label class="col-form-label col-lg-2">الوصف<span class="text-danger">*</span></label>
     <div class="col-lg-10">
-        <textarea name="{{$content}}" class="form-control summernote">{{Request::old($content) ? Request::old($content) : $model->content}}</textarea>
+        <textarea required name="{{$content}}" class="form-control summernote">{{Request::old($content) ? Request::old($content) : $model->content}}</textarea>
     </div>
 </div>
 
 @php $job = "job"; @endphp
 <div class="form-group row">
-    <label class="col-form-label col-lg-2">المهنة</label>
+    <label class="col-form-label col-lg-2">المهنة<span class="text-danger">*</span></label>
     <div class="col-lg-10">
-        <input name="{{$job}}" type="text" value="{{Request::old($job) ? Request::old($job) : $model->job}}" class="form-control" placeholder="اكتب المهنة/الوظيفة">
+        <input name="{{$job}}" type="text" value="{{Request::old($job) ? Request::old($job) : $model->job}}" class="form-control" required placeholder="اكتب المهنة/الوظيفة">
     </div>
 </div>
 
 @php $user = "user"; @endphp
 <div class="col-lg-10">
-    <input name="{{$user}}" value="{{auth()->user()->name}}" type="hidden">
+    <input required name="{{$user}}" value="{{auth()->user()->name}}" type="hidden">
 </div>
 
 
@@ -41,7 +41,7 @@
 
 
 <div class="form-group row">
-    <label class="col-form-label col-lg-2">إختار صورة<span class="text-danger">*</span></label>
+    <label class="col-form-label col-lg-2">إختار صورة</label>
     <div class="col-lg-10">
         <input type="file" name="image" class="form-control-uniform" data-fouc>
     </div>

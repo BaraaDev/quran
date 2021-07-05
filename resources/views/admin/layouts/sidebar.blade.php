@@ -84,7 +84,7 @@
                 <a href="{{route('events.index')}}" class="nav-link {{active()->route('events.*')}}"><i class="icon-calendar3"></i> <span>الأحداث</span></a>
                 <ul class="nav nav-group-sub" data-submenu-title="الأحداث">
                     <li class="nav-item"><a href="{{route('events.index')}}" class="nav-link {{active()->route('events.index')}}">جميع الأحداث</a></li>
-                    <li class="nav-item"><a href="{{route('events.create')}}" class="nav-link {{active()->route('events.create')}}">إضافة حدث جديد</a></li>
+                    <li class="nav-item"><a href="{{route('events.create')}}" class="nav-link {{active()->route('events.create')}}">إضافة أحداث جديده</a></li>
                 </ul>
             </li>
 
@@ -93,7 +93,7 @@
                 <a href="{{route('services.index')}}" class="nav-link {{active()->route('services.*')}}"><i class="icon-wrench3"></i> <span>الخدمات</span></a>
                 <ul class="nav nav-group-sub" data-submenu-title="الخدمات">
                     <li class="nav-item"><a href="{{route('services.index')}}" class="nav-link {{active()->route('services.index')}}">جميع الخدمات</a></li>
-                    <li class="nav-item"><a href="{{route('services.create')}}" class="nav-link {{active()->route('services.create')}}">إنشاء خدمة جديد</a></li>
+                    <li class="nav-item"><a href="{{route('services.create')}}" class="nav-link {{active()->route('services.create')}}">إنشاء خدمات جديده</a></li>
                 </ul>
             </li>
 
@@ -102,7 +102,7 @@
                 <a href="{{route('testimonials.index')}}" class="nav-link {{active()->route('testimonials.*')}}"><i class="icon-quotes-left"></i> <span>الأراء</span></a>
                 <ul class="nav nav-group-sub" data-submenu-title="الأراء">
                     <li class="nav-item"><a href="{{route('testimonials.index')}}" class="nav-link {{active()->route('testimonials.index')}}">جميع الأراء</a></li>
-                    <li class="nav-item"><a href="{{route('testimonials.create')}}" class="nav-link {{active()->route('testimonials.create')}}">إنشاء أراء جديده</a></li>
+                    <li class="nav-item"><a href="{{route('testimonials.create')}}" class="nav-link {{active()->route('testimonials.create')}}">إضافة أراء جديده</a></li>
                 </ul>
             </li>
 

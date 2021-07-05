@@ -1,8 +1,8 @@
 @php $name = "name"; @endphp
 <div class="form-group row">
-    <label class="col-form-label col-lg-2">اسم المستخدم</label>
+    <label class="col-form-label col-lg-2">اسم المستخدم<span class="text-danger">*</span></label>
     <div class="col-lg-10">
-        <input name="{{$name}}" value="{{Request::old($name) ? Request::old($name) : $model->name}}" type="text" class="form-control" placeholder="اكتب اسم المستخدم">
+        <input name="{{$name}}" value="{{Request::old($name) ? Request::old($name) : $model->name}}" type="text" class="form-control" required placeholder="اكتب اسم المستخدم">
     </div>
 </div>
 
@@ -10,18 +10,18 @@
 
 @php $email = "email"; @endphp
 <div class="form-group row">
-    <label class="col-form-label col-lg-2">البريد الإلكتروني</label>
+    <label class="col-form-label col-lg-2">البريد الإلكتروني<span class="text-danger">*</span></label>
     <div class="col-lg-10">
-        <input name="{{$email}}" value="{{Request::old($email) ? Request::old($email) : $model->email}}" type="email" class="form-control" placeholder="اكتب البريد الإلكتروني">
+        <input name="{{$email}}" value="{{Request::old($email) ? Request::old($email) : $model->email}}" type="email" class="form-control" required placeholder="اكتب البريد الإلكتروني">
     </div>
 </div>
 
 
 @php $phone = "phone"; @endphp
 <div class="form-group row">
-    <label class="col-form-label col-lg-2">الهاتف</label>
+    <label class="col-form-label col-lg-2">الهاتف<span class="text-danger">*</span></label>
     <div class="col-lg-10">
-        <input name="{{$phone}}" value="{{Request::old($phone) ? Request::old($phone) : $model->phone}}" type="text" class="form-control" placeholder="اكتب رقم الهاتف">
+        <input name="{{$phone}}" value="{{Request::old($phone) ? Request::old($phone) : $model->phone}}" type="text" class="form-control" required placeholder="اكتب رقم الهاتف">
     </div>
 </div>
 

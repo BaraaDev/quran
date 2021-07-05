@@ -9,7 +9,10 @@
 
     <div class="navbar-collapse collapse" id="navbar-footer">
         <span class="navbar-text">
-            &copy; 2015 - 2018. موقع دار التحفيظ  من خلال <a href="https://www.linkedin.com/in/baraaphp/" target="_blank">قهوة المبرمجين</a>
+             لوحة التحكم لموقع دار التحفيظ أفنان جميع الحقوق محفوظة . 2015 - {{date('Y')}} &copy;
         </span>
+        <ul class="navbar-nav ml-lg-auto">
+            من خلال موقع <a href="https://www.facebook.com/ProgrammersCaffe/" target="_blank"> Programmers Coffee </a>
+        </ul>
     </div>
 </div><!-- /footer -->

@@ -1,16 +1,16 @@
 @php $title = "title"; @endphp
 <div class="form-group row">
-    <label class="col-form-label col-lg-2">العنوان</label>
+    <label class="col-form-label col-lg-2">العنوان<span class="text-danger">*</span></label>
     <div class="col-lg-10">
-        <input name="{{$title}}" value="{{Request::old($title) ? Request::old($title) : $model->title}}" type="text" class="form-control" placeholder="اكتب عنوان المقال">
+        <input name="{{$title}}" value="{{Request::old($title) ? Request::old($title) : $model->title}}" type="text" class="form-control" required placeholder="اكتب عنوان المقال">
     </div>
 </div>
 
 @php $content = "content"; @endphp
 <div class="form-group row">
-    <label class="col-form-label col-lg-2">المحتوي</label>
+    <label class="col-form-label col-lg-2">المحتوي<span class="text-danger">*</span></label>
     <div class="col-lg-10">
-        <textarea name="{{$content}}" rows="3" cols="3" class="form-control summernote" placeholder="اكتب محتوي المقال">{{Request::old($content) ? Request::old($content) : $model->content}}</textarea>
+        <textarea name="{{$content}}" rows="3" cols="3" class="form-control summernote" required placeholder="اكتب محتوي المقال">{{Request::old($content) ? Request::old($content) : $model->content}}</textarea>
     </div>
 </div>
 
@@ -43,7 +43,7 @@
 @php $user = "user"; @endphp
 
 <div class="col-lg-10">
-    <input name="{{$user}}" value="{{auth()->user()->name}}" type="hidden">
+    <input required name="{{$user}}" value="{{auth()->user()->name}}" type="hidden">
 </div>
 
 
@@ -67,8 +67,8 @@
 
 @php $link = "link"; @endphp
 <div class="form-group row">
-    <label class="col-form-label col-lg-2">رابط الفيديو</label>
+    <label class="col-form-label col-lg-2">رابط الفيديو<span class="text-danger">*</span></label>
     <div class="col-lg-10">
-        <input name="{{$link}}" value="{{Request::old($link) ? Request::old($link) : $model->link}}" type="text" class="form-control" placeholder="أدخل رابط الفيديو">
+        <input name="{{$link}}" value="{{Request::old($link) ? Request::old($link) : $model->link}}" type="url" required class="form-control" placeholder="أدخل رابط الفيديو">
     </div>
 </div>
