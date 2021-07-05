@@ -66,7 +66,6 @@ class SettingController extends Controller
 
         $setting->update($request->all());
         if ($request->hasFile('image')) {
-
             $setting
                 ->clearMediaCollection('images')
                 ->addMediaFromRequest('image')
@@ -75,8 +74,7 @@ class SettingController extends Controller
                 ->withCustomProperties([
                     'subject'  => $setting->title,
                 ])
-                ->toMediaCollection('images');
-
+            ->toMediaCollection('images');
         }
 
         return redirect()->back()

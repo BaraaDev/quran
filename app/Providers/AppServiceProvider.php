@@ -26,13 +26,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        /*view()->share('aboutUs',AboutUs::orderBy('id','desc')->latest()->limit(100)->get());
+        view()->share('aboutUs',AboutUs::orderBy('id','desc')->latest()->limit(100)->get());
         view()->share('aboutUsFind',AboutUs::first());
 
         view()->share('settings',Setting::orderBy('id','desc')->latest()->limit(100)->get());
         view()->share('settingsFind',Setting::first());
 
         view()->share('contactUs',ContactUs::orderBy('created_at','desc')->latest()->where('is_sender',0)->limit(6)->get());
-        view()->share('contactUsCount',ContactUs::where('is_read',0)->where('is_sender',0)->orderBy('id','desc')->count());*/
+        view()->share('contactUsCount',ContactUs::where('is_read',0)->where('is_sender',0)->orderBy('id','desc')->count());
     }
 }

@@ -9,10 +9,10 @@
             <div class="col-lg-8 text-center pt-lg--10 pt-7">
                 <h1 class="fw-700 text-grey-900 display4-size display4-xs-size lh-1 mb-3 pt-5 aos-init" data-aos="fade-up" data-aos-delay="200" data-aos-duration="400">{{$settingsFind->title}}</h1>
                 <p class="fw-300 font-xsss lh-28 text-grey-500 pl-lg--5 pr-lg--5 aos-init" data-aos="fade-up" data-aos-delay="300" data-aos-duration="500">{!! $settingsFind->description!!}</p>
-                <a href="javascript:void(00)" class="btn border-0 bg-dark text-uppercase p-3 text-white fw-700 ls-3 rounded-lg d-inline-block font-xssss btn-light mt-3 w200 aos-init" data-aos="fade-up" data-aos-delay="400" data-aos-duration="500">إبدا الان معنا</a>
+                <a href="javascript:void(0)" class="btn border-0 bg-dark text-uppercase p-3 text-white fw-700 ls-3 rounded-lg d-inline-block font-xssss btn-light mt-3 w200 aos-init" data-aos="fade-up" data-aos-delay="400" data-aos-duration="500">إبدا الان معنا</a>
             </div>
             <div class="col-lg-12">
-                <img loading="lazy" src="{{$settingsFind->getFirstMediaUrl('images')}}" alt="image" class="img-fluid pt-0 aos-init" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="500">
+                <img loading="lazy" src="{{$settingsFind->getFirstMediaUrl('images')}}" alt="{{$settingsFind->title}}" class="img-fluid pt-0 aos-init" data-aos="zoom-in" data-aos-delay="500" data-aos-duration="500">
             </div>
         </div>
     </div>
