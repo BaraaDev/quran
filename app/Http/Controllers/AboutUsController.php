@@ -16,8 +16,8 @@ class AboutUsController extends Controller
     public function index()
     {
         $about = AboutUs::first();
-        $services = Service::limit(4)->get();
-        $testimonials = Testimonial::limit(3)->get();
+        $services = Service::status()->limit(4)->get();
+        $testimonials = Testimonial::status()->limit(3)->get();
 
         SEOMeta::setTitle($about->title);
         SEOMeta::setDescription($about->description);

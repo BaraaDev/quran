@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbar-mobile">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="Javascript:void(0)" class="navbar-nav-link sidebar-control sidebar-main-toggle d-none d-md-block">
+                <a href="Javascript:void(0)" onclick="return index('sidebar-xs')" class="navbar-nav-link sidebar-control sidebar-main-toggle d-none d-md-block sidebar-xs">
                     <i class="icon-paragraph-justify3"></i>
                 </a>
             </li>
@@ -79,7 +79,10 @@
 
                 <div class="dropdown-menu dropdown-menu-right">
 
-                    <a href="Javascript:void(0)" class="dropdown-item"><i class="icon-switch2"></i>تسجيل الخروج</a>
+                    <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="icon-switch2"  ></i>تسجيل الخروج</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
             </li>
         </ul>

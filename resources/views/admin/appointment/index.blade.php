@@ -18,7 +18,7 @@
 
             <div class="header-elements d-none">
                 <div class="d-flex justify-content-center">
-                    <a href="{{route('appointments.create')}}" class="btn btn-link btn-float text-default"><i class="icon-plus22 text-green"></i><span>إنشاء مواعيد جديده</span></a>
+                    <a href="{{route('appointments.create')}}" class="btn btn-link btn-float text-default"><i class="icon-plus22 text-green"></i><span>إضافة مواعيد جديده</span></a>
                 </div>
             </div>
         </div>

@@ -37,6 +37,7 @@ class UserController extends Controller
 
     public function store(UserRequest $request)
     {
+        $request->merge(['password' => bcrypt($request->password)]);
         $users = User::create($request->all());
 
         return redirect()->route('users.index')->with(['message' => "تم إنشاء المستخدم بنجاح"]);
@@ -58,6 +59,7 @@ class UserController extends Controller
 
     public function update(UserRequest $request, $id)
     {
+        $request->merge(['password' => bcrypt($request->password)]);
         $users = User::findOrFail($id);
         $users->update($request->all());
 

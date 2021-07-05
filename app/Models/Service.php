@@ -15,4 +15,8 @@ class Service extends Model implements HasMedia
 
     protected $dates = ['deleted_at'];
     protected $fillable = ['title','description','icon','user','status'];
+
+    public function scopeStatus(){
+        return $this->where('status' , 1);
+    }
 }

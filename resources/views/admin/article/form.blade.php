@@ -19,7 +19,7 @@
     <label class="col-form-label col-lg-2">المستوي<span class="text-danger">*</span></label>
     <div class="col-lg-6">
         @inject('level','App\Models\Level')
-        {!! Form::select('level_id',$level->pluck('title','id'),Request::old('level_id') ? Request::old('level_id') : $model->level_id,[
+        {!! Form::select('level_id',$level->status()->pluck('title','id'),Request::old('level_id') ? Request::old('level_id') : $model->level_id,[
             'placeholder' => 'اختر من المستويات',
             'class' => 'form-control form-control-select2'
         ]) !!}
@@ -31,7 +31,7 @@
     <div class="col-lg-9">
         @inject('tag','App\Models\Tag')
 
-        {!! Form::select('tag_id[]',$tag->pluck('name','id'),null,[
+        {!! Form::select('tag_id[]',$tag->status()->pluck('name','id'),null,[
             'class' => 'form-control form-control-select2',
             'value' => 'tag->id',
             'multiple' => 'multiple',

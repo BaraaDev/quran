@@ -3,11 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\About\AboutUpdateRequest;
-use App\Http\Requests\About\AboutRequest;
+use App\Http\Requests\AboutRequest;
 use App\Models\AboutUs;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class AboutUsController extends Controller
 {
@@ -38,14 +35,16 @@ class AboutUsController extends Controller
     public function store(AboutRequest $request)
     {
         $about_us = AboutUs::create($request->all());
-        $about_us
-            ->addMediaFromRequest('image')
-            ->UsingName($about_us->title)
-            ->UsingFileName("$about_us->title.jpg")
-            ->withCustomProperties([
-                'subject'  => $about_us->title,
-            ])
-            ->toMediaCollection('images');
+        if ($request->hasFile('image')) {
+            $about_us
+                ->addMediaFromRequest('image')
+                ->UsingName($about_us->title)
+                ->UsingFileName("$about_us->title.jpg")
+                ->withCustomProperties([
+                    'subject'  => $about_us->title,
+                ])
+                ->toMediaCollection('images');
+        }
         return redirect()->route('about_us.edit',$about_us->id);
     }
 
@@ -61,7 +60,7 @@ class AboutUsController extends Controller
             }
     }
 
-    public function update(AboutUpdateRequest $request,$id)
+    public function update(AboutRequest $request,$id)
     {
         $about_us = AboutUs::findOrFail($id);
 

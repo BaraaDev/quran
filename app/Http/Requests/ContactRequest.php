@@ -29,7 +29,6 @@ class ContactRequest extends FormRequest
             'email'      => 'required|min:3|max:199|email:rfc,dns',
             'subject'    => 'required|min:3|max:199|string',
             'message'    => 'required|min:3|string',
-
         ];
     }
 }

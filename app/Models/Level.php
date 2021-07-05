@@ -18,4 +18,8 @@ class Level extends Model
     {
         $this->hasMany(Article::class,'level_id','id');
     }
+
+    public function scopeStatus(){
+        return $this->where('status' , 1);
+    }
 }

@@ -25,7 +25,7 @@
 
             <div class="header-elements d-none">
                 <div class="d-flex justify-content-center">
-                    <a href="{{route('appointments.create')}}" class="btn btn-link btn-float text-default"><i class="icon-plus22 text-green"></i><span>إنشاء مستوي جديده</span></a>
+                    <a href="{{route('appointments.create')}}" class="btn btn-link btn-float text-default"><i class="icon-plus22 text-green"></i><span>إضافة مواعيد جديده</span></a>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
             <div class="d-flex">
                 <div class="breadcrumb">
                     <a href="{{route('dashboard.home')}}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>لوحة التحكم</a>
-                    <a href="{{route('appointments.index')}}" class="breadcrumb-item"> العلامات</a>
+                    <a href="{{route('appointments.index')}}" class="breadcrumb-item">المواعيد</a>
                     <span class="breadcrumb-item active">تعديل "{{$model->title}}"</span>
                 </div>
             </div>

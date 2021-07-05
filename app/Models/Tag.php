@@ -19,4 +19,8 @@ class Tag extends Model
     {
         return $this->belongsToMany(Article::class,'article_tag');
     }
+
+    public function scopeStatus(){
+        return $this->where('status' , 1);
+    }
 }

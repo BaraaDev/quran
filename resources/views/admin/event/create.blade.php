@@ -33,7 +33,7 @@
             <div class="d-flex">
                 <div class="breadcrumb">
                     <a href="{{route('dashboard.home')}}" class="breadcrumb-item"><i class="icon-home2 mr-2"></i>لوحة التحكم</a>
-                    <a href="{{route('events.index')}}" class="breadcrumb-item"> الحدثات</a>
+                    <a href="{{route('events.index')}}" class="breadcrumb-item"> الأحداث</a>
                     <span class="breadcrumb-item active">إنشاء حدث جديد</span>
                 </div>
             </div>

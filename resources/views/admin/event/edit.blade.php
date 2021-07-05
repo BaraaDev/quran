@@ -25,7 +25,7 @@
 
             <div class="header-elements d-none">
                 <div class="d-flex justify-content-center">
-                    <a href="{{route('events.create')}}" class="btn btn-link btn-float text-default"><i class="icon-plus22 text-green"></i><span>إنشاء مستوي جديد</span></a>
+                    <a href="{{route('events.create')}}" class="btn btn-link btn-float text-default"><i class="icon-plus22 text-green"></i><span>إنشاء أحداث جديد</span></a>
                 </div>
             </div>
         </div>

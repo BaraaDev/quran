@@ -39,11 +39,10 @@ class TestimonialController extends Controller
             ->UsingName($testimonials->name)
             ->UsingFileName("$testimonials->name.jpg")
             ->withCustomProperties([
-
                 'subject'  => $testimonials->name,
             ])
             ->toMediaCollection('images');
-        return redirect()->route('testimonials.index')->with(['message' => "تم الإنشاء بنجاح"]);
+         return redirect()->route('testimonials.index')->with(['message' => "تم الإنشاء بنجاح"]);
     }
 
 

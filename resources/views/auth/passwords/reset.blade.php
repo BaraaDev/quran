@@ -23,7 +23,7 @@
 
                         <div class="form-group icon-input mb-3">
                             <i class="font-sm ti-email text-grey-500 pr-0"></i>
-                            <input name="email" type="text" class="style2-input pl-5 form-control text-grey-900 font-xsss fw-600 @error('email') is-invalid @enderror" value="{{ old('email') }}" required placeholder="عنوان البريد الإلكتروني">
+                            <input name="email" type="text" class="style2-input pl-5 form-control text-grey-900 font-xsss fw-600 @error('email') is-invalid @enderror" value="{{ $email ?? old('email') }}" required placeholder="عنوان البريد الإلكتروني">
                             @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

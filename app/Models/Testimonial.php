@@ -13,6 +13,10 @@ class Testimonial extends Model implements HasMedia
     public $timestamps = true;
     use SoftDeletes,InteractsWithMedia;
 
-    protected $dates = ['deleted_at'];
+    protected $dates    = ['deleted_at'];
     protected $fillable = ['name','content','job','user','status'];
+
+    public function scopeStatus(){
+        return $this->where('status' ,1);
+    }
 }

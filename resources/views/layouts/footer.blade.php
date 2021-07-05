@@ -7,9 +7,9 @@
                         <a href="{{route('home')}}"><h1 class="cairo-font ls-3 fw-700 text-white font-xxl">{{$settingsFind->title}}<span class="d-block font-xsssss ls-1 text-grey-500 open-font ">{{$settingsFind->description}}</span></h1></a>
                         <p class="w-100 mt-5">{{$settingsFind->location}} <br> {{$settingsFind->email}}</p>
                         <ul class="d-flex align-items-center mt-3 float-left">
-                            <li class="ml-2"><a href="https://www.facebook.com/{{$settingsFind->facebook}}" target="_blank" class="btn-round-md bg-facebook"><i class="font-xs ti-facebook text-white"></i></a></li>
-                            <li class="ml-2"><a href="https://wa.me/{{$settingsFind->whatsApp}}" target="_blank" class="btn-round-md bg-whatsup"><i class="font-xs ti-mobile text-white"></i></a></li>
-                            <li class="ml-2"><a href="mailto:{{$settingsFind->email}}" target="_blank" class="btn-round-md bg-skype"><i class="font-xs ti-email text-white"></i></a></li>
+                            <li class="ml-2"><a href="https://www.facebook.com/{{$settingsFind->facebook}}" target="_blank" rel="nofollow"><i class="fab fa-facebook fa-3x"></i></a></li>
+                            <li class="ml-2"><a href="https://wa.me/{{$settingsFind->whatsApp}}" target="_blank" rel="nofollow"><i class="fab fa-whatsapp fa-3x"></i></a></li>
+                            <li class="ml-2"><a href="mailto:{{$settingsFind->email}}" target="_blank" rel="nofollow" ><i class="fas fa-envelope fa-3x"></i></a></li>
 
                         </ul>
                     </div>

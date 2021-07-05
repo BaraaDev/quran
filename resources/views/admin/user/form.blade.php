@@ -28,7 +28,7 @@
 <div class="form-group row">
     <label class="col-form-label col-lg-2">كلمة السر</label>
     <div class="col-lg-10">
-        <input name="password" type="password" class="form-control" placeholder="اكتب كلمة السر">
+        <input name="password" type="password" value="{{ old('password') }}" class="form-control" placeholder="اكتب كلمة السر">
     </div>
 </div>
 
@@ -36,9 +36,10 @@
 <div class="form-group row">
     <label class="col-form-label col-lg-2">اعادة كلمة السر</label>
     <div class="col-lg-10">
-        <input name="password_confirmation" type="password" class="form-control" placeholder="اكتب اعادة كلمة السر">
+        <input name="password_confirmation" type="password" value="{{ old('password') }}" class="form-control" placeholder="اكتب اعادة كلمة السر">
     </div>
 </div>
+
 
 @php $is_admin = "is_admin"; @endphp
 <div class="form-group row">

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
+use App\Models\Event;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,10 +21,12 @@ class HomeController extends Controller
         $this->middleware(['auth','admin']);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-
-        return view('admin.home');
+        $users    = User::count();
+        $articles = User::count();
+        $events   = Event::count();
+        return view('admin.home',compact('users','articles','events'));
     }
 
 }

@@ -15,10 +15,10 @@
                     <h4 class=" fw-500 mb-4 lh-30 font-xsss text-grey-500 mt-0">{!! $about->content!!}</h4>
                 </div>
                 <div class="col-lg-5 offset-lg-1">
-                    <ul class="d-block list-inline float-right-md mb-3">
-                        <li class="list-inline-item mr-1"><a href="https://www.facebook.com/{{$settingsFind->facebook}}" target="_blank" class="btn-round-md bg-facebook"><i class="font-xs ti-facebook text-white"></i></a></li>
-                        <li class="list-inline-item mr-1"><a href="https://wa.me/{{$settingsFind->whatsApp}}" target="_blank" class="btn-round-md bg-whatsup"><i class="font-xs ti-mobile text-white"></i></a></li>
-                         <li class="list-inline-item mr-1"><a href="mailto:{{$settingsFind->email}}" target="_blank" class="btn-round-md bg-skype"><i class="font-xs ti-email text-white"></i></a></li>
+                    <ul class="d-block list-inline float-left-md mb-3">
+                        <li class="list-inline-item mr-1"><a href="https://www.facebook.com/{{$settingsFind->facebook}}" target="_blank" rel="nofollow" ><i class="fab fa-facebook fa-3x"></i></a></li>
+                        <li class="list-inline-item mr-1"><a href="https://wa.me/{{$settingsFind->whatsApp}}" target="_blank" rel="nofollow"><i class="fab fa-whatsapp fa-3x"></i></a></li>
+                        <li class="list-inline-item mr-1"><a href="mailto:{{$settingsFind->email}}" target="_blank" rel="nofollow" ><i class="fas fa-envelope fa-3x"></i></a></li>
                       </ul>
                 </div>
                 <div class="col-lg-12 mt-3">

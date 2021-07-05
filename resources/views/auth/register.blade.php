@@ -47,7 +47,7 @@
 
                         <div class="col-sm-12 p-0 text-left">
                             <div class="form-group mb-1"><button type="submit" class="form-control text-center style2-input text-white fw-600 bg-dark border-0 p-0 ">التسجيل</button></div>
-                            <h6 class="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">لديك حساب بالفعل <a href="{{route('login')}}" class="fw-700 ml-1">تسجيل الدخول</a></h6>
+                            <h6 class="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32 text-center">لديك حساب بالفعل <a href="{{route('login')}}" class="fw-700 ml-1">تسجيل الدخول</a></h6>
                         </div>
                     </form>
                 </div>
@@ -56,6 +56,5 @@
     </div>
 </div>
 @include('layouts.footer-script')
-
 </body>
 </html>

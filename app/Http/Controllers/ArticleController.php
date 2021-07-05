@@ -27,7 +27,7 @@ class ArticleController extends Controller
 
     public function index()
     {
-        $articles = Article::orderBy('created_at','DESC')->paginate('1');
+        $articles = Article::status()->orderBy('created_at','DESC')->paginate('25');
         SEOMeta::setTitle('دروس ومقالات موقع دار أفنان');
         SEOMeta::setDescription('عرض المقالات والدروس الخاصه بكل المستويات فى موقع دار أفنان عرض المقالات والدروس الخاصه بكل المستويات فى موقع دار أفنان عرض المقالات والدروس الخاصه بكل المستويات فى موقع دار أفنان');
         SEOMeta::setCanonical('https://quran.test/articles');
@@ -47,8 +47,8 @@ class ArticleController extends Controller
 
     public function levels($id)
     {
-        $levels = Level::findOrFail($id);
-        $articles = Article::where('level_id',$levels->id)->orderBy('created_at','DESC')->paginate('1');
+        $levels = Level::status()->findOrFail($id);
+        $articles = Article::status()->where('level_id',$levels->id)->orderBy('created_at','DESC')->paginate('1');
 
 
         SEOMeta::setTitle($levels->title);
@@ -72,7 +72,7 @@ class ArticleController extends Controller
     public function show($title)
     {
 
-        $article = Article::findOrFail($title);
+        $article = Article::status()->findOrFail($title);
         $comments = $article->comments()->with('user')->orderBy('id','DESC')->limit(30)->get();
 
         SEOMeta::setTitle($article->title);

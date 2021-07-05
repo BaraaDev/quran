@@ -62,7 +62,7 @@ class ServiceController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(ServiceRequest $request, $id)
     {
         $services = Service::findOrFail($id);
         $services->update($request->all());

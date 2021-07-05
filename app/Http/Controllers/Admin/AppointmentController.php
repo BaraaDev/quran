@@ -35,15 +35,17 @@ class AppointmentController extends Controller
     public function store(AppointmentRequest $request)
     {
         $appointments = Appointment::create($request->all());
-        $appointments
-            ->addMediaFromRequest('image')
-            ->UsingName($appointments->title)
-            ->UsingFileName("$appointments->title.jpg")
+        if ($request->hasFile('image')) {
+            $appointments
+                ->addMediaFromRequest('image')
+                ->UsingName($appointments->title)
+                ->UsingFileName("$appointments->title.jpg")
 
-            ->withCustomProperties([
-                'subject'  => $appointments->title,
-            ])
-            ->toMediaCollection('images');
+                ->withCustomProperties([
+                    'subject'  => $appointments->title,
+                ])
+                ->toMediaCollection('images');
+        }
         return redirect()->route('appointments.index')->with(['message' => "تم إنشاء موعد بنجاح"]);
     }
 

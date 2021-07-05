@@ -20,7 +20,8 @@
         "laravelcollective/html": "^6.2",
         "spatie/laravel-medialibrary": "^9.0.0",
         "spatie/laravel-sitemap": "^5.8.0",
-        "stevebauman/active": "2.0.0.*"
+        "stevebauman/active": "2.0.0.*",
+        "stevebauman/location": "^6.1"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

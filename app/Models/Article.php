@@ -30,8 +30,7 @@ class Article extends Model implements HasMedia
         return $this->hasMany(Comment::class,'article_id','id');
     }
 
-    public function scopeArticleStatus()
-    {
+    public function scopeStatus(){
         return $this->where('status' , 1);
     }
 }

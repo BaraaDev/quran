@@ -17,5 +17,8 @@ class Appointment extends Model  implements HasMedia
     protected $dates = ['deleted_at'];
     protected $fillable = ['title','content','user','status','start_at','end_at'];
 
+    public function scopeStatus(){
+        return $this->where('status' , 1);
+    }
 
 }

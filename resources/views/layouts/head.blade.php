@@ -13,4 +13,6 @@
     <link rel="stylesheet" href="{{asset('website/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('website/css/aos.min.css')}}">
     <link rel="stylesheet" href="{{asset('website/css/style-rtl.css')}}">
+    <link rel="stylesheet" href="{{asset('website/css/all.min.css')}}">
+
 </head>

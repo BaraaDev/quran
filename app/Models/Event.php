@@ -27,4 +27,8 @@ class Event extends Model implements HasMedia
     {
         return $this->belongsTo(Appointment::class);
     }
+
+    public function scopeStatus(){
+        return $this->where('status' , 1);
+    }
 }

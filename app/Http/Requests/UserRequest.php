@@ -16,12 +16,8 @@ class UserRequest extends FormRequest
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    public function rules()
+
+    protected function onCreate()
     {
         return [
             'name'        => 'required|min:3|max:199|string',
@@ -32,4 +28,27 @@ class UserRequest extends FormRequest
             'status'      => 'required|in:0,1|numeric',
         ];
     }
+
+    protected function onUpdate()
+    {
+        return [
+            'name'        => 'required|min:3|max:199|string',
+            'phone'       => 'required|numeric|unique:users,phone,'.request()->segment(3).',id',
+            'email'       => 'required|email:rfc,dns|min:3|max:225|unique:users,email,'.request()->segment(3).',id',
+            'is_admin'    => 'required|in:user,admin|string',
+            'status'      => 'required|in:0,1|numeric',
+        ];
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return request()->isMethod('put') || request()->isMethod('patch') ?
+            $this->onUpdate() : $this->onCreate();
+    }
+
 }

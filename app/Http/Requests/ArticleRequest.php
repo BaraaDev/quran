@@ -15,6 +15,31 @@ class ArticleRequest extends FormRequest
     {
         return true;
     }
+    protected function onCreate()
+    {
+        return [
+            'title'      => 'required|min:3|max:199|string',
+            'content'    => 'required|min:3|string',
+            'user'       => 'required',
+            'link'       => 'required|url',
+            'level_id'   => 'required|exists:levels,id',
+            'status'     => 'required|in:0,1|numeric',
+            'image'      => 'required|image|mimes:jpeg, png'
+        ];
+
+    }
+
+    protected function onUpdate()
+    {
+        return [
+            'title'      => 'required|min:3|max:199|string',
+            'content'    => 'required|min:3|string',
+            'user'       => 'required',
+            'link'       => 'required|url',
+            'level_id'   => 'required|exists:levels,id',
+            'status'     => 'required|in:0,1|numeric',
+        ];
+    }
 
     /**
      * Get the validation rules that apply to the request.
@@ -23,14 +48,9 @@ class ArticleRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'title'      => 'required|min:3|max:199|string',
-            'content'    => 'required|min:3|string',
-            'user'       => 'required',
-            'image'      => 'required',
-            'link'       => 'required|url',
-            'level_id'   => 'required|exists:levels,id',
-            'status'     => 'required|in:0,1|numeric',
-        ];
+        return request()->isMethod('put') || request()->isMethod('patch') ?
+            $this->onUpdate() : $this->onCreate();
     }
+
+
 }

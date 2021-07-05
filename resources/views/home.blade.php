@@ -108,9 +108,37 @@
         </div>
     </div>
 </div>
-
+<div class="service-wrapper layer-after">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="page-title style1 col-xl-6 col-lg-8 col-md-10 text-center mb-5">
+                <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-warning d-inline-block text-warning mr-1">Feedback</span>
+                <h2 class="text-grey-900 fw-700 font-xxl pb-3 mb-0 mt-3 d-block lh-3">We help not one, <br>But many Companies</h2>
+                <p class="fw-300 font-xssss lh-28 text-grey-500">orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dol ad minim veniam, quis nostrud exercitation</p>
+            </div>
+        </div>
+        <div class="row">
+            @foreach($events as $event)
+            <div class="col-lg-6">
+                <div class="card w-100 border-0 p-4 text-center d-block shadow-xss rounded-xxl">
+                    <div class="card-image p-4 bg-lightblue rounded-xxl"><img src="{{$event->getFirstMediaUrl('images')}}" alt="{{$event->title}}" class="img-fluid p-4"></div>
+                    <h2 class="font-md fw-700 text-grey-900 mt-4 mb-0">{{$event->title}}</h2>
+                    <p class="fw-300 font-xssss lh-28 text-grey-500 p-3">{!! $event->description !!}</p>
+                    <a href="{{$event->link}}" rel="nofollow" target="_blank" class="btn border-0  bg-primary  text-white fw-600 rounded-lg d-inline-block font-xssss btn-light mt-1 os-init" type="text" style="border: 0; padding: 5px 10px;" value="https://www.google.com/?gws_rd=ssl" id="myInput">  اضغط للذهاب للجلسة</a>
+                    @if($event->status == 1)
+                    <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-warning d-inline-block text-warning mr-1">متاحة</span>
+                    @else
+                    <span class="font-xsssss fw-700 pl-3 pr-3 lh-32 text-uppercase rounded-xl ls-2 alert-warning d-inline-block text-warning mr-1">مغلق</span>
+                    @endif
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div>
 <div class="feedback-wrapper pt-lg--7 pb-lg--7 pb-5 pt-5">
     <div class="container">
+        @if(count($testimonials))
         <div class="row">
             <div class="col-lg-6 text-left mb-5 pb-0">
 
@@ -136,7 +164,26 @@
                 </div>
             </div>
         </div>
+
+        @else
+            <div class="col-lg-6 text-center mb-5 pb-0">
+
+                <h2 class="text-grey-800 fw-700 font-xl lh-2">لا يوجد أراء</h2>
+            </div>
+        @endif
     </div>
 </div>
 
 @endsection
+
+@section('footer')
+    <script>
+        AOS.init();
+        function myFunction() {
+            var copyText = document.getElementById("myInput");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999)
+            document.execCommand("copy");
+        }
+    </script>
+    @endsection

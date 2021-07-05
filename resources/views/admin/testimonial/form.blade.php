@@ -10,7 +10,7 @@
 <div class="form-group row">
     <label class="col-form-label col-lg-2">الوصف</label>
     <div class="col-lg-10">
-        <textarea name="{{$content}}"  class="form-control summernote">{{Request::old($content) ? Request::old($content) : $model->content}}</textarea>
+        <textarea name="{{$content}}" class="form-control summernote">{{Request::old($content) ? Request::old($content) : $model->content}}</textarea>
     </div>
 </div>
 

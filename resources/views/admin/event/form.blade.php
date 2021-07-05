@@ -28,7 +28,7 @@
     <div class="col-lg-6">
         @inject('tag','App\Models\Category')
 
-        {!! Form::select('category_id',$tag->pluck('name','id'),Request::old('category_id') ? Request::old('category_id') : $model->category_id,[
+        {!! Form::select('category_id',$tag->status()->pluck('name','id'),Request::old('category_id') ? Request::old('category_id') : $model->category_id,[
             'placeholder' => 'اختر من الأقسام',
             'class' => 'form-control form-control-select2'
         ]) !!}
@@ -41,7 +41,7 @@
     <div class="col-lg-6">
         @inject('tag','App\Models\Appointment')
 
-        {!! Form::select('appointment_id',$tag->pluck('title','id'),Request::old('appointment_id') ? Request::old('appointment_id') : $model->appointment_id,[
+        {!! Form::select('appointment_id',$tag->status()->pluck('title','id'),Request::old('appointment_id') ? Request::old('appointment_id') : $model->appointment_id,[
             'placeholder' => 'اختر من المواعيد',
             'class' => 'form-control form-control-select2'
         ]) !!}

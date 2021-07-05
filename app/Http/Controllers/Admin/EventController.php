@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\EventRequest;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
@@ -32,18 +33,20 @@ class EventController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(EventRequest $request)
     {
         $events = Event::create($request->all());
-        $events
-            ->addMediaFromRequest('image')
-            ->UsingName($events->title)
-            ->UsingFileName("$events->title.jpg")
-            ->withCustomProperties([
+        if ($request->hasFile('image')) {
+            $events
+                ->addMediaFromRequest('image')
+                ->UsingName($events->title)
+                ->UsingFileName("$events->title.jpg")
+                ->withCustomProperties([
 
-                'subject'  => $events->title,
-            ])
-            ->toMediaCollection('images');
+                    'subject'  => $events->title,
+                ])
+                ->toMediaCollection('images');
+        }
         return redirect()->route('events.index')->with(['message' => "تم الإنشاء بنجاح"]);
     }
 
@@ -62,7 +65,7 @@ class EventController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(EventRequest $request, $id)
     {
         $events = Event::findOrFail($id);
         $events->update($request->all());

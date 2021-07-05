@@ -18,9 +18,12 @@
             <div class="col-lg-3 text-right d-none d-lg-block">
                 @if (auth()->check())
                     @if(auth()->user()->is_admin == 'admin')
-                <a href="{{route('dashboard.home')}}" class="float-right d-none d-lg-block text-center mt-1 ml-4 text-grey-800"><i class="ti-home font-lg"></i><span class="font-xssss fw-500 d-block lh-1">لوحة التحكم</span></a>
+                <a href="{{route('dashboard.home')}}" class="float-right d-none d-lg-block text-center mt-1 ml-4 text-grey-800"><i class="fas fa-tachometer-alt"></i><span class="font-cairo fw-500 d-block lh-1">لوحة التحكم</span></a>
                     @endif
-                <a href="#" class="float-right d-none d-lg-block text-center mt-1 ml-4 text-grey-800"><i class="ti-user font-lg"></i><span class="font-xssss fw-500 d-block lh-1">الحساب</span></a>
+                 <a href="{{ route('logout') }}" class="float-right d-none d-lg-block text-center mt-1 ml-4 text-grey-800"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt" ></i><span class="font-cairo fw-500 d-block lh-1">تسجيل الخروج</span></a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 @else
                 <a href="{{route('login')}}" class="header-btn bg-dark fw-500 text-white font-xssss p-2 lh-32 w100 text-center d-inline-block rounded-xl mt-1">تسجيل الدخول</a>
                 <a href="{{route('register')}}" class="header-btn bg-current fw-500 text-white font-xssss p-2 lh-32 w100 text-center d-inline-block rounded-xl mt-1">التسجيل</a>

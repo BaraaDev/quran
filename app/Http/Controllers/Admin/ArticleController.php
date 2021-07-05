@@ -64,7 +64,7 @@ class ArticleController extends Controller
         return view('admin.article.edit',compact('model'));
     }
 
-    public function update(Request $request,$id)
+    public function update(ArticleRequest $request,$id)
     {
         $articles = Article::findOrFail($id);
         $articles->tags()->sync($request->tag_id);

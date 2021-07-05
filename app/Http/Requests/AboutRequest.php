@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\About;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -16,6 +16,23 @@ class AboutRequest extends FormRequest
         return true;
     }
 
+
+    protected function onCreate()
+    {
+        return [
+            'title'   => 'required|min:3|max:199|string',
+            'content' => 'required|min:3|string',
+            'image'   => 'required|image|mimes:jpeg, png'
+        ];
+    }
+
+    protected function onUpdate()
+    {
+        return [
+            'title'   => 'required|min:3|max:199|string',
+            'content' => 'required|min:3|string',
+        ];
+    }
     /**
      * Get the validation rules that apply to the request.
      *
@@ -23,12 +40,11 @@ class AboutRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'title'   => 'required|min:3|max:199|string',
-            'content' => 'required|min:3|string',
-            'image'   => 'required|image|mimes:jpeg, png',
-        ];
+        return request()->isMethod('put') || request()->isMethod('patch') ?
+            $this->onUpdate() : $this->onCreate();
     }
+
+
 
     /**
      * Get the error messages for the defined validation rules.

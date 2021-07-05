@@ -13,4 +13,8 @@ class Category extends Model
 
     protected $dates = ['deleted_at'];
     protected $fillable = ['name','user','status'];
+
+    public function scopeStatus(){
+        return $this->where('status' , 1);
+    }
 }
